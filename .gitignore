@@ -1,3 +1,8 @@
+#dd
+ollama_data/
+webui_data/
+webui_pipelines/
+#
 .DS_Store
 node_modules
 /build
@@ -307,3 +312,4 @@ dist
 cypress/videos
 cypress/screenshots
 .vscode/settings.json
+docker-compose-prod.yml

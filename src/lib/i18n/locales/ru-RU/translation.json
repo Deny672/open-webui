@@ -1129,6 +1129,7 @@
 	"Warning: Enabling this will allow users to upload arbitrary code on the server.": "Предупреждение. Включение этого параметра позволит пользователям загружать произвольный код на сервер.",
 	"Warning: If you update or change your embedding model, you will need to re-import all documents.": "Предупреждение: Если вы обновите или измените модель эмбеддинга, вам нужно будет повторно импортировать все документы.",
 	"Warning: Jupyter execution enables arbitrary code execution, posing severe security risks—proceed with extreme caution.": "",
+	"Wait for confirmation from the administrator.":"Ожидайте подтверждения администратором.",
 	"Web": "Веб",
 	"Web API": "Веб API",
 	"Web Search": "Веб-поиск",

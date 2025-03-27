@@ -1129,6 +1129,7 @@
 	"Warning: Enabling this will allow users to upload arbitrary code on the server.": "",
 	"Warning: If you update or change your embedding model, you will need to re-import all documents.": "",
 	"Warning: Jupyter execution enables arbitrary code execution, posing severe security risks—proceed with extreme caution.": "",
+	"Wait for confirmation from the administrator.":"",
 	"Web": "",
 	"Web API": "",
 	"Web Search": "",
