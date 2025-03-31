@@ -313,3 +313,6 @@ cypress/videos
 cypress/screenshots
 .vscode/settings.json
 docker-compose-prod.yml
+docker-compose-test.yaml
+.gitignore
+docker-compose.yml
