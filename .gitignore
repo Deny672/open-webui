@@ -1,3 +1,7 @@
+backup/
+backup_webui.sh
+docker-compose.yml
+update_webui.sh
 #dd
 ollama_data/
 webui_data/
