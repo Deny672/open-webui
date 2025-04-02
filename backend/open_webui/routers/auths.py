@@ -20,6 +20,7 @@ from open_webui.models.auths import (
 )
 from open_webui.models.users import Users
 
+from open_webui.tg_bot.bot_instance import bot
 from open_webui.constants import ERROR_MESSAGES, WEBHOOK_MESSAGES
 from open_webui.env import (
     WEBUI_AUTH,
@@ -28,6 +29,7 @@ from open_webui.env import (
     WEBUI_AUTH_COOKIE_SAME_SITE,
     WEBUI_AUTH_COOKIE_SECURE,
     SRC_LOG_LEVELS,
+    TG_CHAT_ID,
 )
 from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.responses import RedirectResponse, Response
@@ -461,6 +463,11 @@ async def signup(request: Request, response: Response, form_data: SignupForm):
             form_data.profile_image_url,
             role,
         )
+
+        try:
+            await bot.send_message(TG_CHAT_ID, f"Користувач {form_data.name} надіслав запит на реєстрацію аккаунта. Почта {form_data.email.lower()}")
+        except Exception as e:
+            log.info(f"Error {e}")
 
         if user:
             expires_delta = parse_duration(request.app.state.config.JWT_EXPIRES_IN)
