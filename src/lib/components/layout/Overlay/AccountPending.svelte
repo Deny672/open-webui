@@ -21,7 +21,7 @@
 		<div class="m-auto pb-10 flex flex-col justify-center">
 			<div class="max-w-md">
 				<div class="text-center dark:text-white text-2xl font-medium z-50">
-					{$i18n.t('Wait for confirmation from the administrator.')}<br />
+					{$i18n.t('Wait for confirmation from the administrator within 10 minutes.')}<br />
 				</div>
 
 				<div class=" mt-6 mx-auto relative group w-fit">

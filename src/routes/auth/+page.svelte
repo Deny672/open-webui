@@ -250,7 +250,7 @@
 												type="text"
 												class="my-0.5 w-full text-sm outline-hidden bg-transparent"
 												autocomplete="name"
-												placeholder={$i18n.t('Enter Your Full Name')}
+												placeholder={$i18n.t('Enter your full first and last name')}
 												required
 											/>
 										</div>
