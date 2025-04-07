@@ -519,8 +519,11 @@
 				: [navigator.language || navigator.userLanguage];
 			const lang = backendConfig.default_locale
 				? backendConfig.default_locale
-				: bestMatchingLanguage(languages, browserLanguages, 'en-US');
+				: bestMatchingLanguage(languages, browserLanguages, 'uk-UA');
 			changeLanguage(lang);
+		} else {
+			// Ensure the selected language is respected
+			changeLanguage(localStorage.locale);
 		}
 
 		if (backendConfig) {
