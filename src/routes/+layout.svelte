@@ -205,7 +205,8 @@
 	};
 
 	const executeTool = async (data, cb) => {
-		const toolServer = $toolServers?.find((server) => server.url === data.server?.url);
+		const toolServer = $settings?.toolServers?.find((server) => server.url === data.server?.url);
+		const toolServerData = $toolServers?.find((server) => server.url === data.server?.url);
 
 		console.log('executeTool', data, toolServer);
 
@@ -215,7 +216,7 @@
 				toolServer.url,
 				data?.name,
 				data?.params,
-				toolServer
+				toolServerData
 			);
 
 			console.log('executeToolServer', res);
@@ -519,8 +520,11 @@
 				: [navigator.language || navigator.userLanguage];
 			const lang = backendConfig.default_locale
 				? backendConfig.default_locale
-				: bestMatchingLanguage(languages, browserLanguages, 'en-US');
+				: bestMatchingLanguage(languages, browserLanguages, 'uk-UA');
 			changeLanguage(lang);
+		} else {
+			// Ensure the selected language is respected
+			changeLanguage(localStorage.locale);
 		}
 
 		if (backendConfig) {
