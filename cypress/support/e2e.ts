@@ -14,7 +14,7 @@ const login = (email: string, password: string) => {
 		() => {
 			// Make sure to test against us english to have stable tests,
 			// regardless on local language preferences
-			localStorage.setItem('locale', 'uk-UA');
+			localStorage.setItem('locale', 'en-US');
 			// Visit auth page
 			cy.visit('/auth');
 			// Fill out the form
