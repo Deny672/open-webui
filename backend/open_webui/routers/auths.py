@@ -465,7 +465,7 @@ async def signup(request: Request, response: Response, form_data: SignupForm):
         )
 
         try:
-            await bot.send_message(TG_CHAT_ID, f"Користувач {form_data.name} надіслав запит на реєстрацію аккаунта. Почта {form_data.email.lower()}. Посилання на адмін панель з користувачами https://gpt.ta-da.ua/admin/users")
+            await bot.send_message(TG_CHAT_ID, f"Користувач {form_data.name} надіслав запит на реєстрацію аккаунта. Почта {form_data.email.lower()}. Посилання на адмін панель з користувачами https://gpt.ta-da.ua/admin/users .")
         except Exception as e:
             log.info(f"Error {e}")
 
