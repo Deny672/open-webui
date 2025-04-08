@@ -244,7 +244,7 @@
 								<div class="flex flex-col mt-4">
 									{#if mode === 'signup'}
 										<div class="mb-2">
-											<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Name')}</div>
+											<div class=" text-sm font-medium text-left mb-1">{$i18n.t('First and last name')}</div>
 											<input
 												bind:value={name}
 												type="text"
