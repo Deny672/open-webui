@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getAdminDetails } from '$lib/apis/auths';
 	import { onMount, tick, getContext } from 'svelte';
+	import { config } from '$lib/stores';
 
 	const i18n = getContext('i18n');
 
@@ -20,10 +21,29 @@
 	>
 		<div class="m-auto pb-10 flex flex-col justify-center">
 			<div class="max-w-md">
-				<div class="text-center dark:text-white text-2xl font-medium z-50">
-					{$i18n.t('Wait for confirmation from the administrator within 10 minutes.')}<br />
+				<div
+					class="text-center dark:text-white text-2xl font-medium z-50"
+					style="white-space: pre-wrap;"
+				>
+					{#if ($config?.ui?.pending_user_overlay_title ?? '').trim() !== ''}
+						{$config.ui.pending_user_overlay_title}
+					{:else}
+						{$i18n.t('Account Activation Pending')}<br />
+						{$i18n.t('Contact Admin for WebUI Access')}
+					{/if}
 				</div>
 
+				<div
+					class=" mt-4 text-center text-sm dark:text-gray-200 w-full"
+					style="white-space: pre-wrap;"
+				>
+					{#if ($config?.ui?.pending_user_overlay_content ?? '').trim() !== ''}
+						{$config.ui.pending_user_overlay_content}
+					{:else}
+						{$i18n.t('Wait for confirmation from the administrator within 10 minutes.')}<br />
+					{/if}
+				</div>
+				
 				<div class=" mt-6 mx-auto relative group w-fit">
 					<button
 						class="relative z-20 flex px-5 py-2 rounded-full bg-white border border-gray-100 dark:border-none hover:bg-gray-100 text-gray-700 transition font-medium text-sm"
